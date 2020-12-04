@@ -166,7 +166,7 @@ export default class jEpub {
         }
     }
 
-    add(title, content, index = this._Pages.length) {
+    add(title, content, printTitle, index = this._Pages.length) {
         if (utils.isEmpty(title)) {
             throw 'Title is empty';
         } else if (utils.isEmpty(content)) {
@@ -186,7 +186,8 @@ export default class jEpub {
             this._Zip.file(`OEBPS/page-${index}.html`, ejs.render(page, {
                 i18n: this._I18n,
                 title: title,
-                content: content
+                content: content,
+                printTitle: printTitle
             }, {
                 client: true
             }));

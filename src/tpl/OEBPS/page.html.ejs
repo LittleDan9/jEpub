@@ -9,9 +9,11 @@
 
 <body>
 	<div class="chapter type-1">
+        <% if (printTitle) { %>}
 		<div class="chapter-title-wrap">
 			<h2 class="chapter-title"><%= title %></h2>
 		</div>
+        <% } %>
 		<div class="ugc chapter-ugc">
             <% if (Array.isArray(content)) { %>
                 <% content.forEach(item => { %>
